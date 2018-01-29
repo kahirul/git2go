@@ -12,11 +12,9 @@ cd $VENDORED_PATH &&
 mkdir -p install/lib &&
 mkdir -p build &&
 
-rm -fr build/* &&
 cd build &&
 
 pkg-config --libs libssh2
-
 
 cmake -DTHREADSAFE=ON \
       -DBUILD_CLAR=OFF \

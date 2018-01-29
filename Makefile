@@ -1,11 +1,14 @@
-default: test
+default: build-openssl build-libssh2 build-libgit2
 
-test: build-libgit2
+clean:
+	./script/clean-build.sh
+
+test:
 	go run script/check-MakeGitError-thread-lock.go
-	go test .
+	go test
 
 install: build-openssl build-libssh2 build-libgit2
-	./script/set-flags.sh go install .
+	./script/set-flags.sh go install
 
 build-libgit2:
 	./script/build-libgit2-static.sh

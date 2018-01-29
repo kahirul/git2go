@@ -8,7 +8,6 @@ cd $VENDORED_PATH &&
 mkdir -p install/lib &&
 mkdir -p build &&
 
-rm -fr build/*
 cd build &&
 
 cmake -DBUILD_SHARED_LIBS=OFF \

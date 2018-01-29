@@ -28,4 +28,7 @@ cmake -DTHREADSAFE=ON \
       -LIBSSH2_INCLUDE_DIRS=$LIBSSH2_PATH/install/lib/ \
       .. &&
 
-cmake --build .
+cmake --build . &&
+
+make &&
+make install

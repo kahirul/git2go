@@ -2,10 +2,10 @@ default: test
 
 test: build-libgit2
 	go run script/check-MakeGitError-thread-lock.go
-	go test ./...
+	go test .
 
 install: build-openssl build-libssh2 build-libgit2
-	go install ./...
+	./script/set-flags.sh go install .
 
 build-libgit2:
 	./script/build-libgit2-static.sh
@@ -15,10 +15,3 @@ build-libssh2:
 
 build-openssl:
 	./script/build-openssl-static.sh
-
-# install-static: build-libgit2
-# 	go install --tags "static" ./...
-
-test-static: build-libgit2
-	go run script/check-MakeGitError-thread-lock.go
-	go test --tags "static" ./...

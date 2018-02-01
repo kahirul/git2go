@@ -22,7 +22,6 @@ cmake -DTHREADSAFE=ON \
       -DCMAKE_C_FLAGS=-fPIC \
       -DCMAKE_BUILD_TYPE="RelWithDebInfo" \
       -DCMAKE_INSTALL_PREFIX=../install \
-      -DCMAKE_OSX_ARCHITECTURES=x86_64 \
       -LIBSSH2_INCLUDE_DIRS=$LIBSSH2_PATH/install/lib/ \
       .. &&
 

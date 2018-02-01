@@ -9,11 +9,11 @@ git checkout OpenSSL_1_0_2-stable &&
 
 mkdir -p build &&
 
-./Configure darwin64-x86_64-cc threads no-shared enable-ec_nistp_64_gcc_128 \
+./config threads no-shared \
   --prefix=`pwd`/build \
   --openssldir=`pwd`/build \
   -Wl,-rpath,'$(LIBRPATH)' \
-  -fPIC -DOPENSSL_PIC &&
+  -fPIC &&
 
 make depend &&
 make &&
